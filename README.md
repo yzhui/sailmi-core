@@ -1,2 +1,1 @@
-# sailmi-core
-信帆组件包
+SailMI 通用工具包

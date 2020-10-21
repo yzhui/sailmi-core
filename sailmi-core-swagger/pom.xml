@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sailmi-core</artifactId>
+        <groupId>com.sailmi</groupId>
+        <version>2.7.2</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sailmi-core-swagger</artifactId>
+    <name>${project.artifactId}</name>
+    <version>${sailmi.core.version}</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--sailmi-->
+        <dependency>
+            <groupId>com.sailmi</groupId>
+            <artifactId>sailmi-core-tool</artifactId>
+            <version>${sailmi.core.version}</version>
+        </dependency>
+        <!--Swagger-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-micro-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
