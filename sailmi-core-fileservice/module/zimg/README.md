@@ -1,1 +1,0 @@
-[GuideBook](http://zimg.buaa.us/documents/guidebook/)

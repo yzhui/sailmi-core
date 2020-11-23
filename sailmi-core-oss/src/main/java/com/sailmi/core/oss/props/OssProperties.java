@@ -15,9 +15,16 @@
  */
 package com.sailmi.core.oss.props;
 
+import com.sailmi.core.oss.common.core.FileStorage;
+import com.sailmi.core.oss.provider.OssProvider;
+import com.sailmi.core.oss.provider.alioss.impl.FileStorageImpl;
 import lombok.Data;
 import com.sailmi.core.tool.support.Kv;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * Minio参数配置类
@@ -25,9 +32,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author Chill
  */
 @Data
-@ConfigurationProperties(prefix = "oss")
+@Component("ossProperties")
+@EnableConfigurationProperties(OssProperties.class)
+@ConfigurationProperties(prefix = "sailmi.oss")
 public class OssProperties {
-
 	/**
 	 * 是否启用
 	 */
@@ -36,7 +44,13 @@ public class OssProperties {
 	/**
 	 * 对象存储名称
 	 */
-	private String name;
+	private String provider;
+
+
+	/**
+	 * 文件的访问地址，对于本地存储且没有文件服务器的用户使用
+	 */
+	private String fileUrl;
 
 	/**
 	 * 是否开启租户模式
@@ -44,28 +58,7 @@ public class OssProperties {
 	private Boolean tenantMode;
 
 	/**
-	 * 对象存储服务的URL
-	 */
-	private String endpoint;
-
-	/**
-	 * Access key就像用户ID，可以唯一标识你的账户
-	 */
-	private String accessKey;
-
-	/**
-	 * Secret key是你账户的密码
-	 */
-	private String secretKey;
-
-	/**
-	 * 默认的存储桶名称
-	 */
-	private String bucketName = "sailmi";
-
-	/**
 	 * 自定义属性
 	 */
 	private Kv args;
-
 }
