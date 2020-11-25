@@ -46,6 +46,10 @@ public class OssProperties {
 	 */
 	private String provider;
 
+	/**
+	 * 对象存储桶
+	 */
+	private String buckets;
 
 	/**
 	 * 文件的访问地址，对于本地存储且没有文件服务器的用户使用
