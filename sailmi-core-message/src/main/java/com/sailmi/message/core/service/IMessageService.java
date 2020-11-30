@@ -14,7 +14,6 @@ import com.sailmi.message.core.model.dto.QuerySendResult;
 import com.sailmi.message.core.model.dto.SendMessageResult;
 import com.sailmi.message.core.model.dto.ValidateCodeDTO;
 import com.sailmi.message.core.model.vo.MessageVO;
-import com.sailmi.message.core.service.IChannelSMSService;
 
 public interface IMessageService  extends BaseService<Message> {
 
@@ -60,7 +59,7 @@ public interface IMessageService  extends BaseService<Message> {
 	 * @param channelSMSService
 	 * @return
 	 */
-	QuerySendResult queryAndUpdateSendStatus(Message message, IChannelSMSService channelSMSService);
+	QuerySendResult queryAndUpdateSendStatus(Message message, IChannelService channelSMSService);
 
 	/**
 	 * 查询发送中的短信

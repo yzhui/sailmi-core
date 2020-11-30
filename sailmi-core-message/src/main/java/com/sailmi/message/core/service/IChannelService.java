@@ -8,7 +8,7 @@ import com.sailmi.message.core.model.dto.MessageDTO;
 import com.sailmi.message.core.model.dto.QuerySendResult;
 import com.sailmi.message.core.model.dto.SendMessageResult;
 
-public interface IChannelSMSService {
+public interface IChannelService {
 
 	/**
 	 * 调用具体的短信平台发送短信

@@ -6,12 +6,11 @@
     <resultMap id="templateResultMap" type="com.sailmi.message.core.dao.entity.Template">
         <id column="id" property="id"/>
         <result column="channel_template_no" property="channelTemplateNo"/>
-        <result column="name" property="name"/>
-        <result column="type" property="type"/>
-        <result column="template" property="template"/>
+        <result column="template_name" property="name"/>
+        <result column="message_type" property="type"/>
+        <result column="template_content" property="template"/>
         <result column="validate_code_key" property="validateCodeKey"/>
         <result column="validate_code_expire" property="validateCodeExpire"/>
-        <result column="messageSetting_id" property="messageSettingId"/>
     </resultMap>
 
 

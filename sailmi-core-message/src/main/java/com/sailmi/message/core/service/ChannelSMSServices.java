@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.Iterator;
 
 @Component
-public class ChannelSMSServices implements Iterable<IChannelSMSService> {
+public class ChannelSMSServices implements Iterable<IChannelService> {
 
 	@Autowired
 	private ChannelConfig channelConfig;
@@ -17,15 +17,15 @@ public class ChannelSMSServices implements Iterable<IChannelSMSService> {
 	private ApplicationContext applicationContext;
 
 	@Override
-	public Iterator<IChannelSMSService> iterator() {
+	public Iterator<IChannelService> iterator() {
 		return new Itr();
 	}
 
-	public IChannelSMSService getBatchSendable() {
-		return (IChannelSMSService) applicationContext.getBean(channelConfig.getBatchSend());
+	public IChannelService getBatchSendable() {
+		return (IChannelService) applicationContext.getBean(channelConfig.getBatchSend());
 	}
 
-	private class Itr implements Iterator<IChannelSMSService> {
+	private class Itr implements Iterator<IChannelService> {
 
 		int i;
 
@@ -35,8 +35,8 @@ public class ChannelSMSServices implements Iterable<IChannelSMSService> {
 		}
 
 		@Override
-		public IChannelSMSService next() {
-			return (IChannelSMSService) applicationContext.getBean(channelConfig.getAvailable().get(i++));
+		public IChannelService next() {
+			return (IChannelService) applicationContext.getBean(channelConfig.getAvailable().get(i++));
 		}
 	}
 

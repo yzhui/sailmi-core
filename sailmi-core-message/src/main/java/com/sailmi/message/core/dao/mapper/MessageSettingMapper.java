@@ -38,4 +38,14 @@ public interface MessageSettingMapper extends BaseMapper<MessageSetting> {
 	 */
 	List<MessageSettingVO> selectMessageSettingPage(IPage page, MessageSettingVO messageSetting);
 
+
+	/**
+	 * 依据消息类型，获取租户的消息设置
+	 *
+	 * @param tenant_id
+	 * @param message_type
+	 * @return
+	 */
+	List<MessageSettingVO> selectMessageSetting(int tenant_id,int message_type);
+
 }

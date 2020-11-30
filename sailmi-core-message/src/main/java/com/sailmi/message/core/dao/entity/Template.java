@@ -44,6 +44,22 @@ public class Template extends BaseEntity {
     @ApiModelProperty(value = "短信模板id")
     @TableId(value = "id", type = IdType.ASSIGN_ID)
   private Integer id;
+
+	/**
+	 * 模板所属企业
+	 */
+	@ApiModelProperty(value = "企业id")
+	@TableId(value = "enterprise_id")
+	private Integer enterpriseId;
+
+	/**
+	 * 模板所属租户，冗余字段
+	 */
+	@ApiModelProperty(value = "租户id")
+	@TableId(value = "tenant_id")
+	private Integer tenantId;
+
+
     /**
      * 第三方渠道模板
      */
@@ -55,7 +71,7 @@ public class Template extends BaseEntity {
     @ApiModelProperty(value = "模板名称")
     private String name;
     /**
-     * 短信类型
+     * 短信类型 0，sms,1 mail,2 apns.
      */
     @ApiModelProperty(value = "短信类型")
     private Integer type;
@@ -74,9 +90,5 @@ public class Template extends BaseEntity {
      */
     @ApiModelProperty(value = "短信验证码有效时间（秒）")
     private Integer validateCodeExpire;
-    /**
-     * 应用id
-     */
-    @ApiModelProperty(value = "应用id")
-    private Integer messageSettingId;
+
  }

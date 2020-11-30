@@ -1,7 +1,7 @@
 package com.sailmi.message.core.health;
 
 import com.sailmi.message.core.config.SMSHealthConfig;
-import com.sailmi.message.core.dao.constant.Columns;
+import com.sailmi.message.core.dao.constant.SendStatus;
 import com.sailmi.message.core.dao.entity.Message;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
@@ -45,10 +45,10 @@ public class SMSHealthIndicator implements HealthIndicator {
 	}
 
 	public synchronized void addSample(Message message) {
-		if (message.getSendStatus() == Columns.SendStatus.SUCCESS) {
+		if (message.getSendStatus() == SendStatus.SUCCESS) {
 			int index = (int) (count++ % samples.length);
 			samples[index] = true;
-		} else if (message.getSendStatus() == Columns.SendStatus.FAILURE) {
+		} else if (message.getSendStatus() == SendStatus.FAILURE) {
 			lastFailCode = message.getFailCode();
 			int index = (int) (count++ % samples.length);
 			samples[index] = false;

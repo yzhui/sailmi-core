@@ -1,6 +1,6 @@
 package com.sailmi.message.core.service;
 
-public interface IBatchQueryable extends com.sailmi.message.core.service.IChannelSMSService {
+public interface IBatchQueryable extends IChannelService {
 
 	/**
 	 * 批量查询更新发送状态
