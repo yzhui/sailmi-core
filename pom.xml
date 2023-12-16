@@ -167,7 +167,7 @@
         </repository>
         <repository>
             <id>sailmi-repos</id>
-            <url>http://nexus.iitplat.com/repository/sailmi-repo/</url>
+            <url>https://nexus.iitplat.com/repository/sailmi-repo/</url>
         </repository>
     </repositories>
 
@@ -185,12 +185,12 @@
         <repository>
             <id>linose-repos-release</id>
             <name>linose-repos-release</name>
-            <url>http://nexus.iitplat.com/repository/sailmi-repo/</url>
+            <url>https://nexus.iitplat.com/repository/sailmi-repo/</url>
         </repository>
         <snapshotRepository>
             <id>linose-repos-snapshot</id>
             <name>linose-repos-snapshot</name>
-            <url>http://nexus.iitplat.com/repository/sailmi-repo/</url>
+            <url>https://nexus.iitplat.com/repository/sailmi-repo/</url>
         </snapshotRepository>
     </distributionManagement>
 
